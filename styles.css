@@ -535,6 +535,13 @@ a{
   font-size:15px;
 }
 
+.doc-actions{
+  margin-top:8px;
+  display:flex;
+  flex-wrap:wrap;
+  gap:12px;
+}
+
 @media (max-width:900px){
   .navbar{
     flex-wrap:wrap;

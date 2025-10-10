@@ -397,7 +397,8 @@ const translations = {
       privacyContactTitle: "7. Contact",
       privacyContactText: "Email our privacy team:",
       privacyContactEmail: "smfedorov.iosdev@gmail.com",
-      privacyContactResponse: "We typically respond within two business days."
+      privacyContactResponse: "We typically respond within two business days.",
+      privacyTermsButton: "Terms of Usage"
     },
     es: {
       privacyBadge: "Vigente desde marzo de 2025",
@@ -418,7 +419,8 @@ const translations = {
       privacyContactTitle: "7. Contacto",
       privacyContactText: "Envía un correo a nuestro equipo de privacidad:",
       privacyContactEmail: "smfedorov.iosdev@gmail.com",
-      privacyContactResponse: "Respondemos normalmente en un plazo de dos días hábiles."
+      privacyContactResponse: "Respondemos normalmente en un plazo de dos días hábiles.",
+      privacyTermsButton: "Términos de uso"
     },
     ru: {
       privacyBadge: "Актуально с марта 2025 года",
@@ -439,7 +441,8 @@ const translations = {
       privacyContactTitle: "7. Контакты",
       privacyContactText: "Напишите нашей команде по конфиденциальности:",
       privacyContactEmail: "smfedorov.iosdev@gmail.com",
-      privacyContactResponse: "Обычно отвечаем в течение двух рабочих дней."
+      privacyContactResponse: "Обычно отвечаем в течение двух рабочих дней.",
+      privacyTermsButton: "Условия использования"
     },
     de: {
       privacyBadge: "Gültig ab März 2025",
@@ -460,7 +463,8 @@ const translations = {
       privacyContactTitle: "7. Kontakt",
       privacyContactText: "Schreibe an unser Datenschutzteam:",
       privacyContactEmail: "smfedorov.iosdev@gmail.com",
-      privacyContactResponse: "Wir antworten in der Regel innerhalb von zwei Werktagen."
+      privacyContactResponse: "Wir antworten in der Regel innerhalb von zwei Werktagen.",
+      privacyTermsButton: "Nutzungsbedingungen"
     },
     it: {
       privacyBadge: "In vigore da marzo 2025",
@@ -481,7 +485,8 @@ const translations = {
       privacyContactTitle: "7. Contatti",
       privacyContactText: "Scrivi al nostro team privacy:",
       privacyContactEmail: "smfedorov.iosdev@gmail.com",
-      privacyContactResponse: "Rispondiamo di solito entro due giorni lavorativi."
+      privacyContactResponse: "Rispondiamo di solito entro due giorni lavorativi.",
+      privacyTermsButton: "Termini di utilizzo"
     },
     fr: {
       privacyBadge: "En vigueur depuis mars 2025",
@@ -502,7 +507,8 @@ const translations = {
       privacyContactTitle: "7. Contact",
       privacyContactText: "Envoyez un e-mail à notre équipe confidentialité :",
       privacyContactEmail: "smfedorov.iosdev@gmail.com",
-      privacyContactResponse: "Nous répondons généralement sous deux jours ouvrables."
+      privacyContactResponse: "Nous répondons généralement sous deux jours ouvrables.",
+      privacyTermsButton: "Conditions d'utilisation"
     }
   },
   support: {
