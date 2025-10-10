@@ -1,29 +1,100 @@
 <!doctype html>
-<html lang="en"><head>
-<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Support — GlowLab AI</title>
-<meta name="description" content="Support contacts and FAQ.">
-<link rel="icon" href="assets/Artboard_1_1-1.png"><link rel="stylesheet" href="styles.css">
-<meta property="og:title" content="Support — GlowLab AI"><meta property="og:description" content="Support contacts and FAQ.">
-<meta property="og:type" content="website"><meta property="og:image" content="assets/Artboard_1_1-1.png">
-<meta name="theme-color" content="#baa2ff"></head><body><div class="container">
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>GlowLab AI - Support</title>
+    <meta name="description" content="Find GlowLab AI support resources and contact options.">
+    <link rel="icon" href="assets/Artboard_1_1-1.png">
+    <link rel="stylesheet" href="styles.css">
+    <meta property="og:title" content="GlowLab AI - Support">
+    <meta property="og:description" content="Get answers, troubleshoot, and contact GlowLab AI support.">
+    <meta property="og:type" content="website">
+    <meta property="og:image" content="assets/Artboard_1_1-1.png">
+    <meta name="theme-color" content="#baa2ff">
+  </head>
+  <body data-page="support">
+    <div class="page">
+      <header class="navbar">
+        <a class="brand" href="index.html" aria-label="GlowLab AI">
+          <img class="brand-logo" src="assets/Artboard_1_1-1.png" alt="GlowLab AI icon">
+          <span class="brand-name">GlowLab AI</span>
+        </a>
+        <nav class="nav-links" aria-label="Primary navigation">
+          <a class="nav-link" href="privacy.html" data-i18n="navPrivacy">Privacy</a>
+          <a class="nav-link" href="support.html" data-i18n="navSupport">Support</a>
+          <a class="nav-link" href="copyright.html" data-i18n="navCopyright">Copyright</a>
+        </nav>
+        <div class="language-switcher">
+          <label class="sr-only" for="languageSwitcher" data-i18n="languageLabel">Language selector</label>
+          <select id="languageSwitcher" data-role="language-picker" aria-label="Language selector">
+            <option value="en">EN</option>
+            <option value="es">ES</option>
+            <option value="ru">RU</option>
+            <option value="de">DE</option>
+            <option value="it">IT</option>
+            <option value="fr">FR</option>
+          </select>
+        </div>
+      </header>
 
-<header class="header">
-  <img class="logo" src="assets/Artboard_1_1-1.png" alt="GlowLab AI icon">
-  <div class="title">
-    <h1 class="h1">Support</h1>
-    <p class="sub">We’re here to help you get the best from GlowLab AI.</p>
-    <div class="btn-row">
-      <a class="btn" href="mailto:support@glowlab.ai">Email support</a>
-      <a class="btn" href="privacy.html">Privacy Policy</a>
+      <main class="main">
+        <section class="page-hero">
+          <span class="badge" data-i18n="supportBadge">Need help?</span>
+          <h1 data-i18n="supportTitle">GlowLab AI Support</h1>
+          <p data-i18n="supportLead">Find quick fixes, request features, or contact the team directly.</p>
+        </section>
+
+        <section class="doc">
+          <div class="support-grid">
+            <article class="support-card">
+              <h3 data-i18n="supportCard1Title">If the audio is silent</h3>
+              <p data-i18n="supportCard1Body">Follow these steps to restore playback.</p>
+              <ul>
+                <li data-i18n="supportCard1Step1">Make sure the device is not muted and system volume is above 50%.</li>
+                <li data-i18n="supportCard1Step2">Open GlowLab AI, pause the session, and start it again after 3 seconds.</li>
+                <li data-i18n="supportCard1Step3">Restart your device if the issue appears across other apps.</li>
+              </ul>
+            </article>
+
+            <article class="support-card">
+              <h3 data-i18n="supportCard2Title">Restore Premium access</h3>
+              <p data-i18n="supportCard2Body">Use App Store purchase history to unlock existing purchases.</p>
+              <ul>
+                <li data-i18n="supportCard2Step1">Open GlowLab AI -> Settings -> Premium.</li>
+                <li data-i18n="supportCard2Step2">Tap "Restore purchases" and confirm with your Apple ID.</li>
+                <li data-i18n="supportCard2Step3">Ensure you are signed in with the same Apple ID used for the original purchase.</li>
+              </ul>
+            </article>
+
+            <article class="support-card">
+              <h3 data-i18n="supportCard3Title">Share improvement ideas</h3>
+              <p data-i18n="supportCard3Body">Your feedback shapes the next updates.</p>
+              <ul>
+                <li data-i18n="supportCard3Step1">Tell us which soundscapes or visuals you would love to see next.</li>
+                <li data-i18n="supportCard3Step2">Mention your device model and iOS version for context.</li>
+                <li data-i18n="supportCard3Step3">Attach screenshots or short clips if they help explain the request.</li>
+              </ul>
+            </article>
+          </div>
+
+          <div class="doc-section">
+            <h2 data-i18n="supportContactTitle">Contact us</h2>
+            <p data-i18n="supportContactText">Email our support team with a short description of the issue or idea.</p>
+            <a class="doc-link" href="mailto:smfedorov.iosdev@gmail.com" data-i18n="supportContactEmail">smfedorov.iosdev@gmail.com</a>
+            <div class="support-meta">
+              <span data-i18n="supportMetaTime">We reply within two business days.</span>
+              <span data-i18n="supportMetaLanguages">Support available in English, Spanish, and Russian.</span>
+            </div>
+          </div>
+        </section>
+      </main>
+
+      <footer class="footer">
+        <p data-i18n="footerNote">© 2025 GlowLab AI. All rights reserved.</p>
+        <a class="footer-link" href="mailto:smfedorov.iosdev@gmail.com" data-i18n="footerSupport">Support: smfedorov.iosdev@gmail.com</a>
+      </footer>
     </div>
-  </div>
-</header>
-<section class="section">
-  <h3>FAQ</h3>
-  <div class="card"><h4>Как купить Premium?</h4><p>Откройте приложение → Настройки → Премиум. Доступны Lifetime и Monthly.</p></div>
-  <div class="card"><h4>Данные и записи</h4><p>Все записи и настройки хранятся локально на устройстве. При удалении приложения удаляются и данные.</p></div>
-  <div class="card"><h4>Связь</h4><p>Пишите нам на <a href="mailto:support@glowlab.ai">support@glowlab.ai</a>.</p></div>
-</section>
-<div class="footer"><a class="btn" href="index.html">← Back</a></div>
-</div></body></html>
+    <script defer src="script.js"></script>
+  </body>
+</html>

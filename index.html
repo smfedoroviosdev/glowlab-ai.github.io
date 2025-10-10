@@ -1,41 +1,122 @@
 <!doctype html>
-<html lang="en"><head>
-<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<title>GlowLab AI — Gentle sleep sounds — GlowLab AI</title>
-<meta name="description" content="Gentle, seamless sleep sounds with soothing visuals.">
-<link rel="icon" href="assets/Artboard_1_1-1.png"><link rel="stylesheet" href="styles.css">
-<meta property="og:title" content="GlowLab AI — Gentle sleep sounds — GlowLab AI"><meta property="og:description" content="Gentle, seamless sleep sounds with soothing visuals.">
-<meta property="og:type" content="website"><meta property="og:image" content="assets/Artboard_1_1-1.png">
-<meta name="theme-color" content="#baa2ff"></head><body><div class="container">
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>GlowLab AI - Gentle sleep sounds that adapt to you</title>
+    <meta name="description" content="GlowLab AI blends adaptive sleep sounds with cozy visuals to help you drift into calm.">
+    <link rel="icon" href="assets/Artboard_1_1-1.png">
+    <link rel="stylesheet" href="styles.css">
+    <meta property="og:title" content="GlowLab AI - Gentle sleep sounds that adapt to you">
+    <meta property="og:description" content="GlowLab AI blends adaptive sleep sounds with cozy visuals to help you drift into calm.">
+    <meta property="og:type" content="website">
+    <meta property="og:image" content="assets/Artboard_1_1-1.png">
+    <meta name="theme-color" content="#baa2ff">
+  </head>
+  <body data-page="home">
+    <div class="page">
+      <header class="navbar">
+        <a class="brand" href="index.html" aria-label="GlowLab AI">
+          <img class="brand-logo" src="assets/Artboard_1_1-1.png" alt="GlowLab AI icon">
+          <span class="brand-name">GlowLab AI</span>
+        </a>
+        <nav class="nav-links" aria-label="Primary navigation">
+          <a class="nav-link" href="privacy.html" data-i18n="navPrivacy">Privacy</a>
+          <a class="nav-link" href="support.html" data-i18n="navSupport">Support</a>
+          <a class="nav-link" href="copyright.html" data-i18n="navCopyright">Copyright</a>
+        </nav>
+        <div class="language-switcher">
+          <label class="sr-only" for="languageSwitcher" data-i18n="languageLabel">Language selector</label>
+          <select id="languageSwitcher" data-role="language-picker" aria-label="Language selector">
+            <option value="en">EN</option>
+            <option value="es">ES</option>
+            <option value="ru">RU</option>
+            <option value="de">DE</option>
+            <option value="it">IT</option>
+            <option value="fr">FR</option>
+          </select>
+        </div>
+      </header>
 
-<header class="header">
-  <img class="logo" src="assets/Artboard_1_1-1.png" alt="GlowLab AI icon">
-  <div class="title">
-    <h1 class="h1">GlowLab AI</h1>
-    <p class="sub">Gentle sleep sounds • Cozy visuals • One press start</p>
-    <div class="btn-row">
-      <a class="btn primary" href="#" aria-label="Download on the App Store">Download on the App Store</a>
-      <a class="btn" href="privacy.html">Privacy Policy</a>
-      <a class="btn" href="support.html">Support</a>
+      <main class="main">
+        <section class="hero">
+          <div class="hero-copy">
+            <span class="badge" data-i18n="heroBadge">Personalized calm for day and night</span>
+            <h1 class="hero-title" data-i18n="heroTitle">Drift into calm with GlowLab AI</h1>
+            <p class="hero-sub" data-i18n="heroSubtitle">GlowLab AI blends adaptive sleep sounds with immersive visuals so you can relax faster, sleep deeper, and wake up refreshed.</p>
+            <div class="hero-cta">
+              <a class="btn primary" href="#" data-i18n="heroPrimaryCta">Download on the App Store</a>
+              <a class="btn ghost" href="mailto:smfedorov.iosdev@gmail.com" data-i18n="heroSecondaryCta">Contact support</a>
+            </div>
+            <p class="hero-note" data-i18n="heroNote">App Store link coming soon.</p>
+            <ul class="hero-list">
+              <li data-i18n="heroPointOne">One-tap playback without ads or sign-ups.</li>
+              <li data-i18n="heroPointTwo">Seamless loops with gentle fades for uninterrupted rest.</li>
+              <li data-i18n="heroPointThree">Timer and Apple Watch controls keep you in flow.</li>
+            </ul>
+          </div>
+          <div class="hero-visual" aria-hidden="true">
+            <div class="device device-back">
+              <img src="assets/Simulator_Screenshot_-_iPhone_13_Pro_Max_-_2025-10-10_at_14.54.05.jpeg" alt="">
+            </div>
+            <div class="device device-mid">
+              <img src="assets/Simulator_Screenshot_-_iPhone_13_Pro_Max_-_2025-10-10_at_14.53.24.jpeg" alt="">
+            </div>
+            <div class="device device-front">
+              <img src="assets/Simulator_Screenshot_-_iPhone_13_Pro_Max_-_2025-10-10_at_14.52.54.jpeg" alt="">
+            </div>
+          </div>
+        </section>
+
+        <section class="store-section">
+          <div class="cta-card">
+            <h2 data-i18n="storeTitle">Ready for your nighttime routine</h2>
+            <p data-i18n="storeSubtitle">Save this page and tap the button once the App Store link is live.</p>
+            <a class="btn store-btn" href="#" data-i18n="storeButton" aria-disabled="true">App Store - Coming soon</a>
+          </div>
+        </section>
+
+        <section class="features" aria-labelledby="featuresTitle">
+          <h2 class="section-title" id="featuresTitle" data-i18n="featuresTitle">Sleep-enhancing highlights</h2>
+          <div class="feature-grid">
+            <article class="feature-card">
+              <h3 data-i18n="feature1Title">Adaptive AI soundscapes</h3>
+              <p data-i18n="feature1Body">Choose curated mixes crafted for deep sleep, focus, or gentle relaxation.</p>
+            </article>
+            <article class="feature-card">
+              <h3 data-i18n="feature2Title">Immersive ambient visuals</h3>
+              <p data-i18n="feature2Body">Soft gradients and animated flows keep your room calm without distractions.</p>
+            </article>
+            <article class="feature-card">
+              <h3 data-i18n="feature3Title">Timer that fits your rhythm</h3>
+              <p data-i18n="feature3Body">Set precise fade-outs so the sound stops the moment you fall asleep.</p>
+            </article>
+            <article class="feature-card">
+              <h3 data-i18n="feature4Title">Apple Watch support</h3>
+              <p data-i18n="feature4Body">Start, pause, and adjust right from your wrist with haptics that guide you softly.</p>
+            </article>
+          </div>
+        </section>
+
+        <section class="screenshots" aria-labelledby="screenshotsTitle">
+          <h2 class="section-title" id="screenshotsTitle" data-i18n="screenshotsTitle">Inside GlowLab AI</h2>
+          <p class="section-sub" data-i18n="screenshotsSubtitle">Preview the app experience before you download.</p>
+          <div class="gallery">
+            <img src="assets/Simulator_Screenshot_-_iPhone_13_Pro_Max_-_2025-10-10_at_14.53.05.jpeg" alt="GlowLab AI sound selection screen">
+            <img src="assets/Simulator_Screenshot_-_iPhone_13_Pro_Max_-_2025-10-10_at_14.54.05.jpeg" alt="GlowLab AI session overview">
+            <img src="assets/Simulator_Screenshot_-_iPhone_13_Pro_Max_-_2025-10-10_at_14.53.17.jpeg" alt="GlowLab AI visualizer">
+            <img src="assets/Simulator_Screenshot_-_iPhone_13_Pro_Max_-_2025-10-10_at_14.53.24.jpeg" alt="GlowLab AI timer view">
+            <img src="assets/Simulator_Screenshot_-_iPhone_13_Pro_Max_-_2025-10-10_at_14.53.30.jpeg" alt="GlowLab AI sound mixing interface">
+            <img src="assets/Simulator_Screenshot_-_iPhone_13_Pro_Max_-_2025-10-10_at_14.52.54.jpeg" alt="GlowLab AI library">
+          </div>
+        </section>
+      </main>
+
+      <footer class="footer">
+        <p data-i18n="footerNote">© 2025 GlowLab AI. All rights reserved.</p>
+        <a class="footer-link" href="mailto:smfedorov.iosdev@gmail.com" data-i18n="footerSupport">Support: smfedorov.iosdev@gmail.com</a>
+      </footer>
     </div>
-  </div>
-</header>
-
-<section class="section">
-  <div class="grid">
-    <div class="card"><h3>One press to start</h3><p>Play calming sounds instantly. No sign‑up, no ads.</p></div>
-    <div class="card"><h3>Seamless audio</h3><p>Click‑free, smooth soundscape with gentle fade.</p></div>
-    <div class="card"><h3>Lava‑lamp visuals</h3><p>Soft animation helps set a relaxing mood.</p></div>
-    <div class="card"><h3>Timer & Watch</h3><p>Set a sleep timer and control from Apple Watch.</p></div>
-  </div>
-</section>
-
-<section class="section">
-  <h2 class="h1" style="font-size:22px;margin:0 0 12px 0;">Screenshots</h2>
-  <div class="gallery"><img src="assets/Simulator_Screenshot_-_iPhone_13_Pro_Max_-_2025-10-10_at_14.53.05.jpeg" alt="App screenshot"><img src="assets/Simulator_Screenshot_-_iPhone_13_Pro_Max_-_2025-10-10_at_14.54.05.jpeg" alt="App screenshot"><img src="assets/Simulator_Screenshot_-_iPhone_13_Pro_Max_-_2025-10-10_at_14.53.17.jpeg" alt="App screenshot"><img src="assets/Simulator_Screenshot_-_iPhone_13_Pro_Max_-_2025-10-10_at_14.53.24.jpeg" alt="App screenshot"><img src="assets/Simulator_Screenshot_-_iPhone_13_Pro_Max_-_2025-10-10_at_14.53.30.jpeg" alt="App screenshot"><img src="assets/Simulator_Screenshot_-_iPhone_13_Pro_Max_-_2025-10-10_at_14.52.54.jpeg" alt="App screenshot"></div>
-</section>
-
-<div class="footer">
-  <p class="small">© 2025 GlowLab AI — <a href="privacy.html">Privacy</a> · <a href="support.html">Support</a></p>
-</div>
-</div></body></html>
+    <script defer src="script.js"></script>
+  </body>
+</html>
