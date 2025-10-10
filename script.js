@@ -257,7 +257,7 @@ const translations = {
       privacyPurchasesTitle: "4. Покупки и подписки",
       privacyPurchasesText: "Если вы покупаете GlowLab AI Premium, платеж обрабатывается Apple через ваш аккаунт App Store. Мы получаем только информацию о статусе покупки; платежные данные нам не передаются.",
       privacyAnalyticsTitle: "5. Диагностика и аналитика",
-      privacyAnalyticsText: "Мы используем агрегированные анонимные данные Apple - отчеты о сбоях и базовые тенденции использования - чтобы понимать работу приложения. Вы можете отключить "Делиться аналитикой с разработчиками" в Настройки iOS > Конфиденциальность и безопасность > Аналитика и улучшения.",
+      privacyAnalyticsText: "Мы используем агрегированные анонимные данные Apple - отчеты о сбоях и базовые тенденции использования - чтобы понимать работу приложения. Вы можете отключить 'Делиться аналитикой с разработчиками' в Настройки iOS > Конфиденциальность и безопасность > Аналитика и улучшения.",
       privacyRightsTitle: "6. Ваши возможности",
       privacyRightsText: "Вы можете очистить историю воспроизведения и сбросить настройки в приложении в любой момент. Удаление GlowLab AI с устройства стирает все связанные данные. Свяжитесь с нами для дополнительных запросов по конфиденциальности.",
       privacyContactTitle: "7. Контакты",
@@ -623,10 +623,11 @@ function getDefaultLanguage() {
 }
 
 function mergeTranslations(lang, page) {
-  const fallback = translations.common.en;
-  const common = translations.common[lang] || fallback;
-  const pageTranslations = translations[page]?.[lang] || translations[page]?.en || {};
-  return { ...fallback, ...common, ...pageTranslations };
+  const fallbackCommon = translations.common.en;
+  const localeCommon = translations.common[lang] || {};
+  const fallbackPage = translations[page]?.en || {};
+  const localePage = translations[page]?.[lang] || {};
+  return { ...fallbackCommon, ...fallbackPage, ...localeCommon, ...localePage };
 }
 
 function applyLanguage(lang, page) {
