@@ -158,6 +158,7 @@ a{
   display:flex;
   flex-direction:column;
   gap:20px;
+  max-width:480px;
 }
 
 .badge{
@@ -570,19 +571,145 @@ a{
 @media (max-width:560px){
   .navbar{
     flex-direction:column;
-    align-items:flex-start;
+    align-items:center;
+    gap:16px;
   }
 
   .nav-links{
     width:100%;
-    justify-content:space-between;
+    justify-content:center;
+    gap:14px;
+    max-width:420px;
   }
 
   .hero{
     grid-template-columns:1fr;
   }
 
+  .hero-copy{
+    align-items:center;
+    text-align:center;
+  }
+
+  .badge{
+    align-self:center;
+  }
+
+  .hero-cta{
+    width:100%;
+    justify-content:center;
+  }
+
+  .hero-list{
+    padding:0;
+    list-style-position:inside;
+    align-items:center;
+    gap:10px;
+  }
+
+  .hero-list li{
+    max-width:320px;
+  }
+
   .hero-visual{
-    min-height:280px;
+    min-height:260px;
+    display:flex;
+    align-items:flex-end;
+    justify-content:center;
+    gap:12px;
+    padding-bottom:12px;
+  }
+
+  .device{
+    position:relative;
+    transform:none;
+    opacity:1;
+    width:190px;
+    box-shadow:0 16px 26px rgba(15,16,32,0.16);
+  }
+
+  .device-back,
+  .device-front{
+    transform:none;
+  }
+
+  .device-back,
+  .device-mid{
+    display:none;
+  }
+
+  .cta-card{
+    padding:32px 22px;
+  }
+
+  .feature-card{
+    padding:20px;
+  }
+
+  .gallery{
+    gap:16px;
+  }
+}
+
+@media (max-width:460px){
+  .page{
+    padding:24px 16px 40px;
+  }
+
+  .navbar{
+    align-items:center;
+    gap:16px;
+  }
+
+  .nav-links{
+    flex-direction:column;
+    align-items:center;
+    gap:10px;
+    justify-content:center;
+  }
+
+  .language-switcher select{
+    width:100%;
+  }
+
+  .hero{
+    padding:34px 18px;
+    gap:36px;
+  }
+
+  .hero-title{
+    font-size:30px;
+  }
+
+  .hero-sub{
+    font-size:16px;
+  }
+
+  .btn{
+    width:100%;
+  }
+
+  .hero-visual{
+    min-height:220px;
+  }
+
+  .device{
+    width:170px;
+  }
+
+  .gallery{
+    grid-template-columns:1fr;
+  }
+
+  .page-hero{
+    padding:32px 20px;
+  }
+
+  .doc{
+    padding:32px 20px;
+  }
+
+  .footer{
+    padding:20px;
   }
 }
