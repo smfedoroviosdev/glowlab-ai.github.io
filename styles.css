@@ -285,44 +285,6 @@ a{
   z-index:2;
 }
 
-.store-section{
-  display:flex;
-  justify-content:center;
-}
-
-.cta-card{
-  width:100%;
-  max-width:780px;
-  background:var(--card);
-  border-radius:var(--radius-md);
-  border:1px solid rgba(15,16,32,0.05);
-  box-shadow:0 18px 40px rgba(15,16,32,0.12);
-  padding:36px clamp(20px,6vw,48px);
-  text-align:center;
-  display:flex;
-  flex-direction:column;
-  gap:16px;
-}
-
-.store-btn{
-  align-self:center;
-  background:#0f0f1f;
-  color:#fff;
-  padding:14px 34px;
-  border-radius:18px;
-  letter-spacing:.02em;
-}
-
-.store-btn[aria-disabled="true"]{
-  background:rgba(15,16,32,0.65);
-  cursor:not-allowed;
-}
-
-.store-btn[aria-disabled="true"]:hover{
-  transform:none;
-  box-shadow:none;
-}
-
 .section-title{
   font-size:28px;
   margin:0;
