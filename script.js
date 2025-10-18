@@ -1,3 +1,28 @@
+const APP_STORE_URL = "https://apps.apple.com/ru/app/glowlab-ai/id6753652691";
+
+(function redirectSafariToAppStore() {
+  if (typeof window === "undefined" || typeof navigator === "undefined") {
+    return;
+  }
+  try {
+    const ua = navigator.userAgent || "";
+    const isIOS = /iP(hone|od|ad)/i.test(ua);
+    const isSafari =
+      /safari/i.test(ua) &&
+      !/crios/i.test(ua) &&
+      !/fxios/i.test(ua) &&
+      !/opios/i.test(ua) &&
+      !/edgios/i.test(ua);
+    const alreadyRedirected = window.sessionStorage.getItem("glowlab-appstore-redirected");
+    if (isIOS && isSafari && !alreadyRedirected) {
+      window.sessionStorage.setItem("glowlab-appstore-redirected", "1");
+      window.location.replace(APP_STORE_URL);
+    }
+  } catch (error) {
+    console.warn("App Store redirect skipped", error);
+  }
+})();
+
 const translations = {
   common: {
     en: {
