@@ -1,3 +1,28 @@
+const APP_STORE_URL = "https://apps.apple.com/ru/app/glowlab-ai/id6753652691";
+
+(function redirectSafariToAppStore() {
+  if (typeof window === "undefined" || typeof navigator === "undefined") {
+    return;
+  }
+  try {
+    const ua = navigator.userAgent || "";
+    const isIOS = /iP(hone|od|ad)/i.test(ua);
+    const isSafari =
+      /safari/i.test(ua) &&
+      !/crios/i.test(ua) &&
+      !/fxios/i.test(ua) &&
+      !/opios/i.test(ua) &&
+      !/edgios/i.test(ua);
+    const alreadyRedirected = window.sessionStorage.getItem("glowlab-appstore-redirected");
+    if (isIOS && isSafari && !alreadyRedirected) {
+      window.sessionStorage.setItem("glowlab-appstore-redirected", "1");
+      window.location.replace(APP_STORE_URL);
+    }
+  } catch (error) {
+    console.warn("App Store redirect skipped", error);
+  }
+})();
+
 const translations = {
   common: {
     en: {
@@ -232,13 +257,10 @@ const translations = {
       heroSubtitle: "GlowLab AI blends AI lullabies with calming visuals so babies fall asleep faster and stay asleep longer.",
       heroPrimaryCta: "Download on the App Store",
       heroSecondaryCta: "Contact support",
-      heroNote: "App Store link coming soon.",
+      heroNote: "GlowLab AI is available on the App Store.",
       heroPointOne: "Start comforting loops with one tap, no ads or sign-ups.",
       heroPointTwo: "Gentle crossfades keep lullabies seamless through the night.",
       heroPointThree: "Automatic timer and Apple Watch controls for middle-of-the-night tweaks.",
-      storeTitle: "Ready for bedtime routines",
-      storeSubtitle: "Save this page and tap the button once the App Store link is live.",
-      storeButton: "App Store - Coming soon",
       featuresTitle: "Baby sleep essentials",
       feature1Title: "Adaptive AI lullabies",
       feature1Body: "Let GlowLab mix white noise, shushing, and melodies based on your baby's mood.",
@@ -249,7 +271,10 @@ const translations = {
       feature4Title: "Apple Watch companion",
       feature4Body: "Soothe from your wrist with haptic cues while holding your baby.",
       screenshotsTitle: "Inside GlowLab AI",
-      screenshotsSubtitle: "Preview the baby sleep experience before you download."
+      screenshotsSubtitle: "Preview the baby sleep experience before you download.",
+      screenshotsPhoneTitle: "iPhone",
+      screenshotsWatchTitle: "Apple Watch",
+      screenshotsIpadTitle: "iPad"
     },
     es: {
       heroBadge: "Sueño tranquilo para bebés",
@@ -257,13 +282,10 @@ const translations = {
       heroSubtitle: "GlowLab AI combina nanas generadas con IA y visuales calmantes para que los bebés se duerman antes y duerman más tiempo.",
       heroPrimaryCta: "Descargar en App Store",
       heroSecondaryCta: "Contactar soporte",
-      heroNote: "Enlace de App Store disponible pronto.",
+      heroNote: "GlowLab AI ya está disponible en App Store.",
       heroPointOne: "Activa bucles reconfortantes con un toque, sin anuncios ni registros.",
       heroPointTwo: "Fundidos suaves mantienen las nanas sin interrupciones toda la noche.",
       heroPointThree: "Temporizador automático y controles desde Apple Watch para ajustar en mitad de la noche.",
-      storeTitle: "Listo para la rutina de sueño",
-      storeSubtitle: "Guarda esta página y toca el botón cuando el enlace de App Store esté disponible.",
-      storeButton: "App Store - Próximamente",
       featuresTitle: "Claves para el sueño del bebé",
       feature1Title: "Nanas adaptativas con IA",
       feature1Body: "Deja que GlowLab combine ruido blanco, shh y melodías según el estado de tu bebé.",
@@ -274,7 +296,10 @@ const translations = {
       feature4Title: "Compañero Apple Watch",
       feature4Body: "Calma desde tu muñeca con señales hápticas mientras sostienes al bebé.",
       screenshotsTitle: "Dentro de GlowLab AI",
-      screenshotsSubtitle: "Descubre la experiencia pensada para la hora de dormir."
+      screenshotsSubtitle: "Descubre la experiencia pensada para la hora de dormir.",
+      screenshotsPhoneTitle: "iPhone",
+      screenshotsWatchTitle: "Apple Watch",
+      screenshotsIpadTitle: "iPad"
     },
     ru: {
       heroBadge: "Спокойный сон для малышей",
@@ -282,13 +307,10 @@ const translations = {
       heroSubtitle: "GlowLab AI сочетает ИИ-колыбельные и мягкие визуальные эффекты, чтобы дети засыпали быстрее и спали дольше.",
       heroPrimaryCta: "Скачать в App Store",
       heroSecondaryCta: "Связаться с поддержкой",
-      heroNote: "Ссылка на App Store появится скоро.",
+      heroNote: "GlowLab AI уже доступно в App Store.",
       heroPointOne: "Запускайте успокаивающие петли в одно касание - без рекламы и регистрации.",
       heroPointTwo: "Плавные перетекания удерживают колыбельные без пауз всю ночь.",
       heroPointThree: "Автоматический таймер и управление с Apple Watch помогают незаметно корректировать звук ночью.",
-      storeTitle: "Готов к вечернему ритуалу",
-      storeSubtitle: "Сохраните страницу и нажмите кнопку, когда ссылка App Store станет доступна.",
-      storeButton: "App Store - скоро",
       featuresTitle: "Преимущества для детского сна",
       feature1Title: "Адаптивные ИИ-колыбельные",
       feature1Body: "GlowLab смешивает белый шум, шипение и мелодии по настроению малыша.",
@@ -299,7 +321,10 @@ const translations = {
       feature4Title: "Компаньон Apple Watch",
       feature4Body: "Управляйте со запястья с мягкой тактильной отдачей, пока держите ребёнка.",
       screenshotsTitle: "Интерфейс GlowLab AI",
-      screenshotsSubtitle: "Посмотрите, как приложение помогает укладывать малыша."
+      screenshotsSubtitle: "Посмотрите, как приложение помогает укладывать малыша.",
+      screenshotsPhoneTitle: "iPhone",
+      screenshotsWatchTitle: "Apple Watch",
+      screenshotsIpadTitle: "iPad"
     },
     de: {
       heroBadge: "Sanfter Babyschlaf mit System",
@@ -307,13 +332,10 @@ const translations = {
       heroSubtitle: "GlowLab AI kombiniert KI-Nanas und beruhigende Visuals, damit Babys schneller einschlafen und länger durchschlafen.",
       heroPrimaryCta: "Im App Store laden",
       heroSecondaryCta: "Support kontaktieren",
-      heroNote: "App-Store-Link folgt in Kürze.",
+      heroNote: "GlowLab AI ist jetzt im App Store verfügbar.",
       heroPointOne: "Starte beruhigende Loops mit einem Tipp - ohne Werbung oder Registrierung.",
       heroPointTwo: "Sanfte Überblendungen halten die Nanas die ganze Nacht nahtlos.",
       heroPointThree: "Automatischer Timer und Apple-Watch-Steuerung für Anpassungen mitten in der Nacht.",
-      storeTitle: "Bereit für die Abendroutine",
-      storeSubtitle: "Speichere diese Seite und tippe, sobald der App-Store-Link live ist.",
-      storeButton: "App Store - Demnächst",
       featuresTitle: "Highlights für besseren Babyschlaf",
       feature1Title: "Adaptive KI-Nanas",
       feature1Body: "GlowLab mischt Weißrauschen, Shushing und Melodien passend zur Stimmung deines Babys.",
@@ -324,7 +346,10 @@ const translations = {
       feature4Title: "Apple-Watch-Begleiter",
       feature4Body: "Beruhige vom Handgelenk mit sanften Haptics, während du dein Baby hältst.",
       screenshotsTitle: "Einblick in GlowLab AI",
-      screenshotsSubtitle: "Sieh dir die Einschlafhilfe für die Kleinsten an."
+      screenshotsSubtitle: "Sieh dir die Einschlafhilfe für die Kleinsten an.",
+      screenshotsPhoneTitle: "iPhone",
+      screenshotsWatchTitle: "Apple Watch",
+      screenshotsIpadTitle: "iPad"
     },
     it: {
       heroBadge: "Sonno sereno per i più piccoli",
@@ -332,13 +357,10 @@ const translations = {
       heroSubtitle: "GlowLab AI unisce ninne nanne generate dall'IA e visual rilassanti per aiutare i bebè ad addormentarsi prima e dormire più a lungo.",
       heroPrimaryCta: "Scarica su App Store",
       heroSecondaryCta: "Contatta il supporto",
-      heroNote: "Il link dell'App Store sarà disponibile a breve.",
+      heroNote: "GlowLab AI è disponibile su App Store.",
       heroPointOne: "Avvia loop rassicuranti con un tocco, senza pubblicità né registrazioni.",
       heroPointTwo: "Dolci dissolvenze mantengono le ninne nanne senza interruzioni tutta la notte.",
       heroPointThree: "Timer automatico e controlli Apple Watch per regolazioni notturne.",
-      storeTitle: "Pronto per la routine della nanna",
-      storeSubtitle: "Salva questa pagina e tocca il pulsante quando il link App Store sarà attivo.",
-      storeButton: "App Store - In arrivo",
       featuresTitle: "Punti di forza per il sonno del bebè",
       feature1Title: "Ninne nanne adattive con IA",
       feature1Body: "GlowLab combina rumore bianco, shhh e melodie in base all'umore del tuo bambino.",
@@ -349,7 +371,10 @@ const translations = {
       feature4Title: "Compagno Apple Watch",
       feature4Body: "Calma dal polso con feedback aptici mentre tieni il bebè in braccio.",
       screenshotsTitle: "Dentro GlowLab AI",
-      screenshotsSubtitle: "Scopri l'esperienza pensata per la nanna."
+      screenshotsSubtitle: "Scopri l'esperienza pensata per la nanna.",
+      screenshotsPhoneTitle: "iPhone",
+      screenshotsWatchTitle: "Apple Watch",
+      screenshotsIpadTitle: "iPad"
     },
     fr: {
       heroBadge: "Sommeil paisible pour bébé",
@@ -357,13 +382,10 @@ const translations = {
       heroSubtitle: "GlowLab AI associe berceuses générées par IA et visuels apaisants pour aider les bébés à s'endormir plus vite et dormir plus longtemps.",
       heroPrimaryCta: "Télécharger sur l'App Store",
       heroSecondaryCta: "Contacter le support",
-      heroNote: "Lien App Store disponible bientôt.",
+      heroNote: "GlowLab AI est disponible sur l'App Store.",
       heroPointOne: "Lancez des boucles rassurantes en un geste, sans publicité ni inscription.",
       heroPointTwo: "Des fondus doux maintiennent les berceuses sans interruption toute la nuit.",
       heroPointThree: "Minuterie automatique et contrôles Apple Watch pour ajuster en pleine nuit.",
-      storeTitle: "Prêt pour la routine du coucher",
-      storeSubtitle: "Enregistrez cette page et appuyez sur le bouton dès que le lien App Store sera en ligne.",
-      storeButton: "App Store - Bientôt",
       featuresTitle: "Atouts pour le sommeil de bébé",
       feature1Title: "Berceuses adaptatives IA",
       feature1Body: "GlowLab mêle bruit blanc, chuchotements et mélodies selon l'humeur de votre bébé.",
@@ -374,7 +396,10 @@ const translations = {
       feature4Title: "Compagnon Apple Watch",
       feature4Body: "Apaisez depuis votre poignet avec des retours haptiques tout en tenant votre bébé.",
       screenshotsTitle: "À l'intérieur de GlowLab AI",
-      screenshotsSubtitle: "Découvrez l'aide au coucher avant de la télécharger."
+      screenshotsSubtitle: "Découvrez l'aide au coucher avant de la télécharger.",
+      screenshotsPhoneTitle: "iPhone",
+      screenshotsWatchTitle: "Apple Watch",
+      screenshotsIpadTitle: "iPad"
     }
   },
   privacy: {
@@ -793,6 +818,196 @@ const translations = {
   }
 };
 
+const heroScreenshots = {
+  en: [
+    "assets/Phone/english_phone/Simulator Screenshot - iPhone 17 Pro - 2025-10-15 at 21.42.52.png",
+    "assets/Phone/english_phone/Simulator Screenshot - iPhone 17 Pro - 2025-10-15 at 21.42.14.png",
+    "assets/Phone/english_phone/Simulator Screenshot - iPhone 17 Pro - 2025-10-15 at 21.41.54.png"
+  ],
+  es: [
+    "assets/Phone/spanish_phone/Simulator Screenshot - iPhone 17 Pro - 2025-10-15 at 21.46.17.png",
+    "assets/Phone/spanish_phone/Simulator Screenshot - iPhone 17 Pro - 2025-10-15 at 21.46.30.png",
+    "assets/Phone/spanish_phone/Simulator Screenshot - iPhone 17 Pro - 2025-10-15 at 21.46.42.png"
+  ],
+  ru: [
+    "assets/Phone/russian_phone/Simulator Screenshot - iPhone 17 Pro - 2025-10-15 at 21.36.55.png",
+    "assets/Phone/russian_phone/Simulator Screenshot - iPhone 17 Pro - 2025-10-15 at 21.37.22.png",
+    "assets/Phone/russian_phone/Simulator Screenshot - iPhone 17 Pro - 2025-10-15 at 21.37.46.png"
+  ],
+  de: [
+    "assets/Phone/deutsch_phone/Simulator Screenshot - iPhone 17 Pro - 2025-10-15 at 21.51.01.png",
+    "assets/Phone/deutsch_phone/Simulator Screenshot - iPhone 17 Pro - 2025-10-15 at 21.51.21.png",
+    "assets/Phone/deutsch_phone/Simulator Screenshot - iPhone 17 Pro - 2025-10-15 at 21.51.46.png"
+  ],
+  it: [
+    "assets/Phone/italian_phone/Simulator Screenshot - iPhone 17 Pro - 2025-10-15 at 21.48.25.png",
+    "assets/Phone/italian_phone/Simulator Screenshot - iPhone 17 Pro - 2025-10-15 at 21.48.37.png",
+    "assets/Phone/italian_phone/Simulator Screenshot - iPhone 17 Pro - 2025-10-15 at 21.48.47.png"
+  ],
+  fr: [
+    "assets/Phone/french_phone/Simulator Screenshot - iPhone 17 Pro - 2025-10-15 at 21.54.20.png",
+    "assets/Phone/french_phone/Simulator Screenshot - iPhone 17 Pro - 2025-10-15 at 21.54.37.png",
+    "assets/Phone/french_phone/Simulator Screenshot - iPhone 17 Pro - 2025-10-15 at 21.54.48.png"
+  ]
+};
+
+const screenshotSources = {
+  phone: {
+    en: [
+      "assets/Phone/english_phone/Simulator Screenshot - iPhone 17 Pro - 2025-10-15 at 21.41.54.png",
+      "assets/Phone/english_phone/Simulator Screenshot - iPhone 17 Pro - 2025-10-15 at 21.42.14.png",
+      "assets/Phone/english_phone/Simulator Screenshot - iPhone 17 Pro - 2025-10-15 at 21.42.34.png",
+      "assets/Phone/english_phone/Simulator Screenshot - iPhone 17 Pro - 2025-10-15 at 21.42.45.png",
+      "assets/Phone/english_phone/Simulator Screenshot - iPhone 17 Pro - 2025-10-15 at 21.42.52.png",
+      "assets/Phone/english_phone/Simulator Screenshot - iPhone 17 Pro - 2025-10-15 at 21.43.00.png",
+      "assets/Phone/english_phone/Simulator Screenshot - iPhone 17 Pro - 2025-10-15 at 21.43.10.png"
+    ],
+    es: [
+      "assets/Phone/spanish_phone/Simulator Screenshot - iPhone 17 Pro - 2025-10-15 at 21.46.17.png",
+      "assets/Phone/spanish_phone/Simulator Screenshot - iPhone 17 Pro - 2025-10-15 at 21.46.30.png",
+      "assets/Phone/spanish_phone/Simulator Screenshot - iPhone 17 Pro - 2025-10-15 at 21.46.42.png",
+      "assets/Phone/spanish_phone/Simulator Screenshot - iPhone 17 Pro - 2025-10-15 at 21.46.55.png",
+      "assets/Phone/spanish_phone/Simulator Screenshot - iPhone 17 Pro - 2025-10-15 at 21.47.02.png",
+      "assets/Phone/spanish_phone/Simulator Screenshot - iPhone 17 Pro - 2025-10-15 at 21.47.09.png",
+      "assets/Phone/spanish_phone/Simulator Screenshot - iPhone 17 Pro - 2025-10-15 at 21.47.16.png"
+    ],
+    ru: [
+      "assets/Phone/russian_phone/Simulator Screenshot - iPhone 17 Pro - 2025-10-15 at 21.36.55.png",
+      "assets/Phone/russian_phone/Simulator Screenshot - iPhone 17 Pro - 2025-10-15 at 21.37.22.png",
+      "assets/Phone/russian_phone/Simulator Screenshot - iPhone 17 Pro - 2025-10-15 at 21.37.46.png",
+      "assets/Phone/russian_phone/Simulator Screenshot - iPhone 17 Pro - 2025-10-15 at 21.38.04.png",
+      "assets/Phone/russian_phone/Simulator Screenshot - iPhone 17 Pro - 2025-10-15 at 21.38.27.png",
+      "assets/Phone/russian_phone/Simulator Screenshot - iPhone 17 Pro - 2025-10-15 at 21.38.42.png",
+      "assets/Phone/russian_phone/Simulator Screenshot - iPhone 17 Pro - 2025-10-15 at 21.39.09.png"
+    ],
+    de: [
+      "assets/Phone/deutsch_phone/Simulator Screenshot - iPhone 17 Pro - 2025-10-15 at 21.51.01.png",
+      "assets/Phone/deutsch_phone/Simulator Screenshot - iPhone 17 Pro - 2025-10-15 at 21.51.21.png",
+      "assets/Phone/deutsch_phone/Simulator Screenshot - iPhone 17 Pro - 2025-10-15 at 21.51.46.png",
+      "assets/Phone/deutsch_phone/Simulator Screenshot - iPhone 17 Pro - 2025-10-15 at 21.51.54.png",
+      "assets/Phone/deutsch_phone/Simulator Screenshot - iPhone 17 Pro - 2025-10-15 at 21.52.00.png",
+      "assets/Phone/deutsch_phone/Simulator Screenshot - iPhone 17 Pro - 2025-10-15 at 21.52.07.png",
+      "assets/Phone/deutsch_phone/Simulator Screenshot - iPhone 17 Pro - 2025-10-15 at 21.52.13.png"
+    ],
+    it: [
+      "assets/Phone/italian_phone/Simulator Screenshot - iPhone 17 Pro - 2025-10-15 at 21.48.25.png",
+      "assets/Phone/italian_phone/Simulator Screenshot - iPhone 17 Pro - 2025-10-15 at 21.48.37.png",
+      "assets/Phone/italian_phone/Simulator Screenshot - iPhone 17 Pro - 2025-10-15 at 21.48.47.png",
+      "assets/Phone/italian_phone/Simulator Screenshot - iPhone 17 Pro - 2025-10-15 at 21.48.59.png",
+      "assets/Phone/italian_phone/Simulator Screenshot - iPhone 17 Pro - 2025-10-15 at 21.49.07.png",
+      "assets/Phone/italian_phone/Simulator Screenshot - iPhone 17 Pro - 2025-10-15 at 21.49.13.png",
+      "assets/Phone/italian_phone/Simulator Screenshot - iPhone 17 Pro - 2025-10-15 at 21.49.20.png"
+    ],
+    fr: [
+      "assets/Phone/french_phone/Simulator Screenshot - iPhone 17 Pro - 2025-10-15 at 21.54.20.png",
+      "assets/Phone/french_phone/Simulator Screenshot - iPhone 17 Pro - 2025-10-15 at 21.54.37.png",
+      "assets/Phone/french_phone/Simulator Screenshot - iPhone 17 Pro - 2025-10-15 at 21.54.48.png",
+      "assets/Phone/french_phone/Simulator Screenshot - iPhone 17 Pro - 2025-10-15 at 21.54.56.png",
+      "assets/Phone/french_phone/Simulator Screenshot - iPhone 17 Pro - 2025-10-15 at 21.55.02.png",
+      "assets/Phone/french_phone/Simulator Screenshot - iPhone 17 Pro - 2025-10-15 at 21.55.08.png",
+      "assets/Phone/french_phone/Simulator Screenshot - iPhone 17 Pro - 2025-10-15 at 21.55.14.png"
+    ]
+  },
+  watch: {
+    en: [
+      "assets/Watch/english_watch/Frame 57.jpg",
+      "assets/Watch/english_watch/Frame 58.jpg"
+    ],
+    es: [
+      "assets/Watch/spanish_watch/Frame 63.jpg",
+      "assets/Watch/spanish_watch/Frame 64.jpg"
+    ],
+    ru: [
+      "assets/Watch/russian_watch/Frame 55.jpg",
+      "assets/Watch/russian_watch/Frame 56.jpg"
+    ],
+    de: [
+      "assets/Watch/deutsch_watch/Frame 59.jpg",
+      "assets/Watch/deutsch_watch/Frame 60.jpg"
+    ],
+    it: [
+      "assets/Watch/italian_watch/Frame 61.jpg",
+      "assets/Watch/italian_watch/Frame 62.jpg"
+    ],
+    fr: [
+      "assets/Watch/french_watch/Frame 65.jpg",
+      "assets/Watch/french_watch/Frame 66.jpg"
+    ]
+  },
+  ipad: {
+    en: [
+      "assets/iPad/english_ipad/Simulator Screenshot - iPad Pro 11-inch (M4) - 2025-10-15 at 22.02.12.png",
+      "assets/iPad/english_ipad/Simulator Screenshot - iPad Pro 11-inch (M4) - 2025-10-15 at 22.02.22.png",
+      "assets/iPad/english_ipad/Simulator Screenshot - iPad Pro 11-inch (M4) - 2025-10-15 at 22.02.37.png",
+      "assets/iPad/english_ipad/Simulator Screenshot - iPad Pro 11-inch (M4) - 2025-10-15 at 22.02.51.png",
+      "assets/iPad/english_ipad/Simulator Screenshot - iPad Pro 11-inch (M4) - 2025-10-15 at 22.03.02.png",
+      "assets/iPad/english_ipad/Simulator Screenshot - iPad Pro 11-inch (M4) - 2025-10-15 at 22.03.11.png",
+      "assets/iPad/english_ipad/Simulator Screenshot - iPad Pro 11-inch (M4) - 2025-10-15 at 22.03.16.png"
+    ],
+    es: [
+      "assets/iPad/spanish_ipad/Simulator Screenshot - iPad Pro 11-inch (M4) - 2025-10-15 at 22.04.10.png",
+      "assets/iPad/spanish_ipad/Simulator Screenshot - iPad Pro 11-inch (M4) - 2025-10-15 at 22.04.20.png",
+      "assets/iPad/spanish_ipad/Simulator Screenshot - iPad Pro 11-inch (M4) - 2025-10-15 at 22.04.29.png",
+      "assets/iPad/spanish_ipad/Simulator Screenshot - iPad Pro 11-inch (M4) - 2025-10-15 at 22.04.43.png",
+      "assets/iPad/spanish_ipad/Simulator Screenshot - iPad Pro 11-inch (M4) - 2025-10-15 at 22.04.50.png",
+      "assets/iPad/spanish_ipad/Simulator Screenshot - iPad Pro 11-inch (M4) - 2025-10-15 at 22.04.59.png",
+      "assets/iPad/spanish_ipad/Simulator Screenshot - iPad Pro 11-inch (M4) - 2025-10-15 at 22.05.06.png"
+    ],
+    ru: [
+      "assets/iPad/russian_ipad/Simulator Screenshot - iPad Pro 11-inch (M4) - 2025-10-15 at 21.59.35.png",
+      "assets/iPad/russian_ipad/Simulator Screenshot - iPad Pro 11-inch (M4) - 2025-10-15 at 21.59.47.png",
+      "assets/iPad/russian_ipad/Simulator Screenshot - iPad Pro 11-inch (M4) - 2025-10-15 at 21.59.59.png",
+      "assets/iPad/russian_ipad/Simulator Screenshot - iPad Pro 11-inch (M4) - 2025-10-15 at 22.00.11.png",
+      "assets/iPad/russian_ipad/Simulator Screenshot - iPad Pro 11-inch (M4) - 2025-10-15 at 22.00.21.png",
+      "assets/iPad/russian_ipad/Simulator Screenshot - iPad Pro 11-inch (M4) - 2025-10-15 at 22.00.28.png",
+      "assets/iPad/russian_ipad/Simulator Screenshot - iPad Pro 11-inch (M4) - 2025-10-15 at 22.00.35.png"
+    ],
+    de: [
+      "assets/iPad/deutsch_ipad/Simulator Screenshot - iPad Pro 11-inch (M4) - 2025-10-15 at 22.08.53.png",
+      "assets/iPad/deutsch_ipad/Simulator Screenshot - iPad Pro 11-inch (M4) - 2025-10-15 at 22.09.05.png",
+      "assets/iPad/deutsch_ipad/Simulator Screenshot - iPad Pro 11-inch (M4) - 2025-10-15 at 22.09.16.png",
+      "assets/iPad/deutsch_ipad/Simulator Screenshot - iPad Pro 11-inch (M4) - 2025-10-15 at 22.09.28.png",
+      "assets/iPad/deutsch_ipad/Simulator Screenshot - iPad Pro 11-inch (M4) - 2025-10-15 at 22.09.36.png",
+      "assets/iPad/deutsch_ipad/Simulator Screenshot - iPad Pro 11-inch (M4) - 2025-10-15 at 22.09.42.png",
+      "assets/iPad/deutsch_ipad/Simulator Screenshot - iPad Pro 11-inch (M4) - 2025-10-15 at 22.09.47.png"
+    ],
+    it: [
+      "assets/iPad/italian_ipad/Simulator Screenshot - iPad Pro 11-inch (M4) - 2025-10-15 at 22.06.34.png",
+      "assets/iPad/italian_ipad/Simulator Screenshot - iPad Pro 11-inch (M4) - 2025-10-15 at 22.06.44.png",
+      "assets/iPad/italian_ipad/Simulator Screenshot - iPad Pro 11-inch (M4) - 2025-10-15 at 22.06.57.png",
+      "assets/iPad/italian_ipad/Simulator Screenshot - iPad Pro 11-inch (M4) - 2025-10-15 at 22.07.10.png",
+      "assets/iPad/italian_ipad/Simulator Screenshot - iPad Pro 11-inch (M4) - 2025-10-15 at 22.07.17.png",
+      "assets/iPad/italian_ipad/Simulator Screenshot - iPad Pro 11-inch (M4) - 2025-10-15 at 22.07.23.png",
+      "assets/iPad/italian_ipad/Simulator Screenshot - iPad Pro 11-inch (M4) - 2025-10-15 at 22.07.28.png"
+    ],
+    fr: [
+      "assets/iPad/french_ipad/Simulator Screenshot - iPad Pro 11-inch (M4) - 2025-10-15 at 22.10.45.png",
+      "assets/iPad/french_ipad/Simulator Screenshot - iPad Pro 11-inch (M4) - 2025-10-15 at 22.10.55.png",
+      "assets/iPad/french_ipad/Simulator Screenshot - iPad Pro 11-inch (M4) - 2025-10-15 at 22.11.06.png",
+      "assets/iPad/french_ipad/Simulator Screenshot - iPad Pro 11-inch (M4) - 2025-10-15 at 22.11.16.png",
+      "assets/iPad/french_ipad/Simulator Screenshot - iPad Pro 11-inch (M4) - 2025-10-15 at 22.11.24.png",
+      "assets/iPad/french_ipad/Simulator Screenshot - iPad Pro 11-inch (M4) - 2025-10-15 at 22.11.29.png",
+      "assets/iPad/french_ipad/Simulator Screenshot - iPad Pro 11-inch (M4) - 2025-10-15 at 22.11.41.png"
+    ]
+  }
+};
+
+const screenshotPlatformOrder = [
+  { key: "phone", titleKey: "screenshotsPhoneTitle" },
+  { key: "watch", titleKey: "screenshotsWatchTitle" },
+  { key: "ipad", titleKey: "screenshotsIpadTitle" }
+];
+
+const screenshotAltLabels = {
+  phone: "iPhone",
+  watch: "Apple Watch",
+  ipad: "iPad"
+};
+
+let currentLanguage = "en";
+let currentTranslations = {};
+let currentPlatform = "phone";
+
 const supportedLanguages = ["en", "es", "ru", "de", "it", "fr"];
 
 function getDefaultLanguage() {
@@ -812,6 +1027,89 @@ function mergeTranslations(lang, page) {
   return { ...fallbackCommon, ...fallbackPage, ...localeCommon, ...localePage };
 }
 
+function updateHeroImages(lang) {
+  const sources = heroScreenshots[lang] || heroScreenshots.en;
+  if (!sources) return;
+  const heroNodes = document.querySelectorAll("[data-hero-image]");
+  heroNodes.forEach((img, index) => {
+    const fallbackSrc = sources[Math.min(index, sources.length - 1)];
+    if (!fallbackSrc) return;
+    if (img.getAttribute("src") !== fallbackSrc) {
+      img.src = fallbackSrc;
+    }
+  });
+}
+
+function renderScreenshotGroups(lang, translationsBundle) {
+  const tabsContainer = document.querySelector("[data-screenshot-tabs]");
+  const panelContainer = document.querySelector("[data-screenshot-panel]");
+  if (!tabsContainer || !panelContainer) return;
+
+  const available = screenshotPlatformOrder
+    .map(({ key, titleKey }) => {
+      const sources =
+        (screenshotSources[key] && (screenshotSources[key][lang] || screenshotSources[key].en)) ||
+        [];
+      if (!sources.length) {
+        return null;
+      }
+      const title = translationsBundle[titleKey] || screenshotAltLabels[key] || "Screenshots";
+      return { key, title, sources };
+    })
+    .filter(Boolean);
+
+  if (!available.length) {
+    tabsContainer.innerHTML = "";
+    panelContainer.innerHTML = "";
+    return;
+  }
+
+  if (!available.some(({ key }) => key === currentPlatform)) {
+    currentPlatform = available[0].key;
+  }
+
+  tabsContainer.innerHTML = "";
+
+  available.forEach(({ key, title }) => {
+    const button = document.createElement("button");
+    button.type = "button";
+    button.className = `screenshot-tab${key === currentPlatform ? " is-active" : ""}`;
+    button.dataset.tab = key;
+    button.textContent = title;
+    button.addEventListener("click", () => {
+      if (currentPlatform === key) return;
+      currentPlatform = key;
+      tabsContainer
+        .querySelectorAll(".screenshot-tab")
+        .forEach((tab) => tab.classList.toggle("is-active", tab.dataset.tab === key));
+      renderPanel();
+    });
+    tabsContainer.appendChild(button);
+  });
+
+  function renderPanel() {
+    panelContainer.innerHTML = "";
+    const current = available.find(({ key }) => key === currentPlatform);
+    if (!current) return;
+
+    const grid = document.createElement("div");
+    grid.className = "screenshot-grid";
+
+    current.sources.forEach((src, index) => {
+      const img = document.createElement("img");
+      img.loading = "lazy";
+      img.decoding = "async";
+      img.src = src;
+      img.alt = `${current.title} screenshot ${index + 1} - GlowLab AI`;
+      grid.appendChild(img);
+    });
+
+    panelContainer.appendChild(grid);
+  }
+
+  renderPanel();
+}
+
 function applyLanguage(lang, page) {
   const merged = mergeTranslations(lang, page);
   document.documentElement.lang = lang;
@@ -824,6 +1122,11 @@ function applyLanguage(lang, page) {
       element.textContent = value;
     }
   });
+
+  currentLanguage = lang;
+  currentTranslations = merged;
+  updateHeroImages(lang);
+  renderScreenshotGroups(lang, merged);
 }
 
 document.addEventListener("DOMContentLoaded", () => {
