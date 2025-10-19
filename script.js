@@ -992,6 +992,22 @@ const screenshotSources = {
   }
 };
 
+const platformVideos = {
+  phone: "assets/Phone/lamp_iphone.mp4",
+  watch: "assets/Watch/lamp_watch.mp4",
+  ipad: "assets/iPad/lamp_ipad.mp4"
+};
+
+Object.entries(platformVideos).forEach(([platform, videoSrc]) => {
+  const langMap = screenshotSources[platform];
+  if (!langMap || !videoSrc) return;
+  Object.keys(langMap).forEach((lang) => {
+    const list = langMap[lang];
+    if (!Array.isArray(list)) return;
+    langMap[lang] = [videoSrc, ...list.filter((item) => item !== videoSrc)];
+  });
+});
+
 const screenshotPlatformOrder = [
   { key: "phone", titleKey: "screenshotsPhoneTitle" },
   { key: "watch", titleKey: "screenshotsWatchTitle" },
@@ -1096,12 +1112,26 @@ function renderScreenshotGroups(lang, translationsBundle) {
     grid.className = "screenshot-grid";
 
     current.sources.forEach((src, index) => {
-      const img = document.createElement("img");
-      img.loading = "lazy";
-      img.decoding = "async";
-      img.src = src;
-      img.alt = `${current.title} screenshot ${index + 1} - GlowLab AI`;
-      grid.appendChild(img);
+      const isVideo = /\.mp4$/i.test(src);
+      if (isVideo) {
+        const video = document.createElement("video");
+        video.preload = "metadata";
+        video.muted = true;
+        video.loop = true;
+        video.autoplay = true;
+        video.playsInline = true;
+        video.controls = true;
+        video.src = src;
+        video.setAttribute("aria-label", `${current.title} demo video`);
+        grid.appendChild(video);
+      } else {
+        const img = document.createElement("img");
+        img.loading = "lazy";
+        img.decoding = "async";
+        img.src = src;
+        img.alt = `${current.title} screenshot ${index + 1} - GlowLab AI`;
+        grid.appendChild(img);
+      }
     });
 
     panelContainer.appendChild(grid);
