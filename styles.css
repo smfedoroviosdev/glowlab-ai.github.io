@@ -389,7 +389,8 @@ a{
   gap:16px;
 }
 
-.screenshot-grid img{
+.screenshot-grid img,
+.screenshot-grid video{
   width:100%;
   border-radius:20px;
   border:1px solid rgba(15,16,32,0.08);
