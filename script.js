@@ -274,7 +274,9 @@ const translations = {
       screenshotsSubtitle: "Preview the baby sleep experience before you download.",
       screenshotsPhoneTitle: "iPhone",
       screenshotsWatchTitle: "Apple Watch",
-      screenshotsIpadTitle: "iPad"
+      screenshotsIpadTitle: "iPad",
+      videoTitle: "See GlowLab AI in real life",
+      videoSubtitle: "Watch how GlowLab AI looks on device before you start your baby’s bedtime routine."
     },
     es: {
       heroBadge: "Sueño tranquilo para bebés",
@@ -299,7 +301,9 @@ const translations = {
       screenshotsSubtitle: "Descubre la experiencia pensada para la hora de dormir.",
       screenshotsPhoneTitle: "iPhone",
       screenshotsWatchTitle: "Apple Watch",
-      screenshotsIpadTitle: "iPad"
+      screenshotsIpadTitle: "iPad",
+      videoTitle: "Mira GlowLab AI en la vida real",
+      videoSubtitle: "Observa cómo se ve GlowLab AI en el dispositivo antes de comenzar la rutina de sueño de tu bebé."
     },
     ru: {
       heroBadge: "Спокойный сон для малышей",
@@ -324,7 +328,9 @@ const translations = {
       screenshotsSubtitle: "Посмотрите, как приложение помогает укладывать малыша.",
       screenshotsPhoneTitle: "iPhone",
       screenshotsWatchTitle: "Apple Watch",
-      screenshotsIpadTitle: "iPad"
+      screenshotsIpadTitle: "iPad",
+      videoTitle: "Посмотрите GlowLab AI в реальной жизни",
+      videoSubtitle: "Увидьте, как GlowLab AI выглядит на устройстве перед тем, как начинать вечернюю рутину малыша."
     },
     de: {
       heroBadge: "Sanfter Babyschlaf mit System",
@@ -349,7 +355,9 @@ const translations = {
       screenshotsSubtitle: "Sieh dir die Einschlafhilfe für die Kleinsten an.",
       screenshotsPhoneTitle: "iPhone",
       screenshotsWatchTitle: "Apple Watch",
-      screenshotsIpadTitle: "iPad"
+      screenshotsIpadTitle: "iPad",
+      videoTitle: "GlowLab AI im Alltag",
+      videoSubtitle: "Schau dir an, wie GlowLab AI auf dem Gerät aussieht, bevor du die Abendroutine startest."
     },
     it: {
       heroBadge: "Sonno sereno per i più piccoli",
@@ -374,7 +382,9 @@ const translations = {
       screenshotsSubtitle: "Scopri l'esperienza pensata per la nanna.",
       screenshotsPhoneTitle: "iPhone",
       screenshotsWatchTitle: "Apple Watch",
-      screenshotsIpadTitle: "iPad"
+      screenshotsIpadTitle: "iPad",
+      videoTitle: "Guarda GlowLab AI nella vita reale",
+      videoSubtitle: "Guarda come appare GlowLab AI sul dispositivo prima di iniziare la routine della nanna."
     },
     fr: {
       heroBadge: "Sommeil paisible pour bébé",
@@ -399,7 +409,9 @@ const translations = {
       screenshotsSubtitle: "Découvrez l'aide au coucher avant de la télécharger.",
       screenshotsPhoneTitle: "iPhone",
       screenshotsWatchTitle: "Apple Watch",
-      screenshotsIpadTitle: "iPad"
+      screenshotsIpadTitle: "iPad",
+      videoTitle: "Découvrez GlowLab AI en situation réelle",
+      videoSubtitle: "Voyez l'apparence de GlowLab AI sur l'appareil avant de lancer la routine du coucher de votre bébé."
     }
   },
   privacy: {

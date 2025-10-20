@@ -335,6 +335,37 @@ a{
   line-height:1.6;
 }
 
+.video-demo{
+  background:var(--card);
+  border-radius:var(--radius-md);
+  padding:36px clamp(18px,5vw,42px);
+  border:1px solid rgba(15,16,32,0.05);
+  box-shadow:0 18px 40px rgba(15,16,32,0.12);
+  display:flex;
+  flex-direction:column;
+  gap:20px;
+}
+
+.video-demo__content{
+  text-align:center;
+  display:flex;
+  flex-direction:column;
+  gap:8px;
+}
+
+.video-demo__player{
+  display:flex;
+  justify-content:center;
+}
+
+.video-demo__video{
+  width:100%;
+  max-width:680px;
+  border-radius:24px;
+  background:#000;
+  box-shadow:0 18px 40px rgba(15,16,32,0.16);
+}
+
 .screenshots{
   background:var(--card);
   border-radius:var(--radius-md);
