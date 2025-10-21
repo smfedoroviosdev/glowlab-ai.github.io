@@ -5,6 +5,11 @@ const APP_STORE_URL = "https://apps.apple.com/ru/app/glowlab-ai/id6753652691";
     return;
   }
   try {
+    const params = new URLSearchParams(window.location.search || "");
+    const hash = window.location.hash || "";
+    if (params.get("stay") === "1" || hash.includes("stay-on-site")) {
+      return;
+    }
     const ua = navigator.userAgent || "";
     const isIOS = /iP(hone|od|ad)/i.test(ua);
     const isSafari =
